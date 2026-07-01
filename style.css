@@ -426,3 +426,46 @@ transform:translateY(0);
 }
 
 }
+/* ========================= */
+/* QR Generator UI */
+/* ========================= */
+
+#qr-input{
+    width:100%;
+    padding:15px;
+    margin:20px 0;
+    border:none;
+    outline:none;
+    border-radius:12px;
+    background:rgba(255,255,255,.08);
+    color:#fff;
+    font-size:16px;
+}
+
+#qr-input::placeholder{
+    color:#bfbfbf;
+}
+
+#generate-btn{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    background:linear-gradient(90deg,#00d4ff,#8b5cf6);
+    color:#fff;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+#generate-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 0 30px rgba(0,212,255,.35);
+}
+
+#qr-result{
+    margin-top:25px;
+    display:flex;
+    justify-content:center;
+}
