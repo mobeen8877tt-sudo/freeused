@@ -1,6 +1,10 @@
 /* Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
+/* ========================= */
+/* Reset */
+/* ========================= */
+
 *{
     margin:0;
     padding:0;
@@ -8,180 +12,20 @@
     font-family:'Poppins',sans-serif;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     background:#070b18;
-    color:white;
+    color:#fff;
     overflow-x:hidden;
+    animation:pageFade 1.2s ease;
 }
 
-/* Navbar */
-
-nav{
-    width:100%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:25px 8%;
-    position:fixed;
-    top:0;
-    left:0;
-    backdrop-filter:blur(18px);
-    background:rgba(255,255,255,.05);
-    border-bottom:1px solid rgba(255,255,255,.08);
-    z-index:999;
-}
-
-.logo{
-    font-size:32px;
-    font-weight:800;
-}
-
-.logo span{
-    color:#00d4ff;
-}
-
-nav ul{
-    display:flex;
-    list-style:none;
-    gap:35px;
-}
-
-nav ul li a{
-    color:white;
-    text-decoration:none;
-    transition:.3s;
-}
-
-nav ul li a:hover{
-    color:#00d4ff;
-}
-
-/* Hero */
-
-.hero{
-    min-height:100vh;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:120px 8%;
-}
-
-.hero-left{
-    width:55%;
-}
-
-.hero-left h1{
-    font-size:60px;
-    line-height:1.2;
-    margin-bottom:25px;
-}
-
-.hero-left p{
-    color:#bcbcbc;
-    font-size:18px;
-    line-height:1.8;
-    margin-bottom:40px;
-}
-
-/* Buttons */
-
-.buttons{
-    display:flex;
-    gap:20px;
-}
-
-.btn1,
-.btn2{
-
-    padding:15px 35px;
-    border:none;
-    border-radius:50px;
-    cursor:pointer;
-    font-size:16px;
-    transition:.35s;
-
-}
-
-.btn1{
-
-    background:#00d4ff;
-    color:white;
-
-}
-
-.btn2{
-
-    background:transparent;
-    border:1px solid #00d4ff;
-    color:#00d4ff;
-
-}
-
-.btn1:hover{
-
-    transform:translateY(-4px);
-
-}
-
-.btn2:hover{
-
-    background:#00d4ff;
-    color:white;
-
-}
-
-/* Glass Card */
-
-.hero-right{
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    width:40%;
-
-}
-
-.glass-card{
-
-    width:320px;
-    height:320px;
-
-    background:rgba(255,255,255,.06);
-
-    border:1px solid rgba(255,255,255,.1);
-
-    backdrop-filter:blur(20px);
-
-    border-radius:30px;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    flex-direction:column;
-
-    box-shadow:0 0 50px rgba(0,212,255,.15);
-
-}
-
-.glass-card h2{
-
-    font-size:35px;
-
-    margin-bottom:15px;
-
-}
-
-.glass-card p{
-
-    color:#bcbcbc;
-
-}
-/* ============================= */
+/* ========================= */
 /* AI Animated Background */
-/* ============================= */
+/* ========================= */
 
 body::before{
     content:"";
@@ -236,15 +80,295 @@ transform:translate(-150px,-120px);
 }
 
 }
-/* Floating Glass Card */
+
+@keyframes pageFade{
+
+from{
+opacity:0;
+transform:translateY(20px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+/* ========================= */
+/* Navbar */
+/* ========================= */
+
+nav{
+
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:25px 8%;
+position:fixed;
+top:0;
+left:0;
+backdrop-filter:blur(18px);
+background:rgba(255,255,255,.05);
+border-bottom:1px solid rgba(255,255,255,.08);
+z-index:999;
+
+}
+
+.logo{
+
+font-size:32px;
+font-weight:800;
+
+}
+
+.logo span{
+
+color:#00d4ff;
+
+}
+nav ul{
+
+display:flex;
+list-style:none;
+gap:35px;
+
+}
+
+nav ul li a{
+
+color:white;
+text-decoration:none;
+transition:.3s;
+
+}
+
+nav ul li a:hover{
+
+color:#00d4ff;
+
+}
+
+/* ========================= */
+/* Hero Section */
+/* ========================= */
+
+.hero{
+
+min-height:100vh;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:120px 8%;
+
+}
+
+.hero-left{
+
+width:55%;
+animation:heroUp 1.4s ease;
+
+}
+
+.hero-right{
+
+display:flex;
+justify-content:center;
+align-items:center;
+width:40%;
+animation:heroUp 1.4s ease;
+
+}
+
+.hero-left h1{
+
+font-size:60px;
+line-height:1.2;
+margin-bottom:25px;
+
+background:linear-gradient(90deg,#ffffff,#00d4ff,#8b5cf6);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+background-size:300%;
+
+animation:gradientMove 6s linear infinite;
+
+}
+
+.hero-left p{
+
+color:#bcbcbc;
+font-size:18px;
+line-height:1.8;
+margin-bottom:40px;
+
+}
+
+@keyframes heroUp{
+
+0%{
+
+opacity:0;
+transform:translateY(60px);
+
+}
+
+100%{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+@keyframes gradientMove{
+
+0%{
+
+background-position:0%;
+
+}
+
+100%{
+
+background-position:300%;
+
+}
+
+}
+/* ========================= */
+/* Buttons */
+/* ========================= */
+
+.buttons{
+
+display:flex;
+gap:20px;
+
+}
+
+.btn1,
+.btn2{
+
+padding:15px 35px;
+border:none;
+border-radius:50px;
+cursor:pointer;
+font-size:16px;
+transition:.35s;
+position:relative;
+overflow:hidden;
+
+}
+
+.btn1{
+
+background:#00d4ff;
+color:white;
+
+}
+
+.btn2{
+
+background:transparent;
+border:1px solid #00d4ff;
+color:#00d4ff;
+
+}
+
+.btn1:hover{
+
+transform:translateY(-4px);
+
+}
+
+.btn2:hover{
+
+background:#00d4ff;
+color:white;
+
+}
+
+.btn1::before,
+.btn2::before{
+
+content:"";
+position:absolute;
+top:0;
+left:-120%;
+width:100%;
+height:100%;
+background:rgba(255,255,255,.25);
+transform:skewX(-25deg);
+transition:.7s;
+
+}
+
+.btn1:hover::before,
+.btn2:hover::before{
+
+left:130%;
+
+}
+
+/* ========================= */
+/* Glass Card */
+/* ========================= */
+
 .glass-card{
-    animation: floatCard 4s ease-in-out infinite;
-    transition: .4s;
+
+width:320px;
+min-height:320px;
+padding:30px;
+
+background:rgba(255,255,255,.06);
+
+border:1px solid rgba(255,255,255,.1);
+
+backdrop-filter:blur(20px);
+
+border-radius:30px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+box-shadow:0 0 50px rgba(0,212,255,.15);
+
+animation:floatCard 4s ease-in-out infinite;
+
+transition:.4s;
+
 }
 
 .glass-card:hover{
-    transform: translateY(-12px) scale(1.03);
-    box-shadow: 0 0 60px rgba(0,212,255,.35);
+
+transform:translateY(-12px) scale(1.03);
+
+box-shadow:0 0 60px rgba(0,212,255,.35);
+
+}
+
+.glass-card h2{
+
+font-size:35px;
+
+margin-bottom:15px;
+
+}
+
+.glass-card p{
+
+color:#bcbcbc;
+
 }
 
 @keyframes floatCard{
@@ -262,172 +386,8 @@ transform:translateY(0px);
 }
 
 }
-/* Gradient Heading */
-
-.hero-left h1{
-
-background:linear-gradient(90deg,#ffffff,#00d4ff,#8b5cf6);
-
--webkit-background-clip:text;
-
--webkit-text-fill-color:transparent;
-
-background-size:300%;
-
-animation:gradientMove 6s linear infinite;
-
-}
-
-@keyframes gradientMove{
-
-0%{
-background-position:0%;
-}
-
-100%{
-background-position:300%;
-}
-
-}
-/* Smooth Page Fade */
-
-body{
-
-animation:pageFade 1.2s ease;
-
-}
-
-@keyframes pageFade{
-
-from{
-
-opacity:0;
-
-transform:translateY(20px);
-
-}
-
-to{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
-}
 /* ========================= */
-/* Responsive Design */
-/* ========================= */
-
-@media(max-width:900px){
-
-nav{
-
-flex-direction:column;
-
-gap:20px;
-
-}
-
-nav ul{
-
-flex-wrap:wrap;
-
-justify-content:center;
-
-}
-
-.hero{
-
-flex-direction:column;
-
-text-align:center;
-
-padding-top:170px;
-
-}
-
-.hero-left{
-
-width:100%;
-
-}
-
-.hero-right{
-
-width:100%;
-
-margin-top:60px;
-
-}
-
-.hero-left h1{
-
-font-size:42px;
-
-}
-
-}
-/* ========================= */
-/* Premium Button Effect */
-/* ========================= */
-
-.btn1,
-.btn2{
-    position:relative;
-    overflow:hidden;
-}
-
-.btn1::before,
-.btn2::before{
-    content:"";
-    position:absolute;
-    top:0;
-    left:-120%;
-    width:100%;
-    height:100%;
-    background:rgba(255,255,255,.25);
-    transform:skewX(-25deg);
-    transition:.7s;
-}
-
-.btn1:hover::before,
-.btn2:hover::before{
-    left:130%;
-}
-/* ========================= */
-/* Smooth Section Animation */
-/* ========================= */
-
-.hero-left,
-.hero-right{
-
-animation:heroUp 1.4s ease;
-
-}
-
-@keyframes heroUp{
-
-0%{
-
-opacity:0;
-
-transform:translateY(60px);
-
-}
-
-100%{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
-}
-/* ========================= */
-/* QR Generator UI */
+/* QR Generator */
 /* ========================= */
 
 #qr-input{
@@ -468,4 +428,175 @@ transform:translateY(0);
     margin-top:25px;
     display:flex;
     justify-content:center;
+    align-items:center;
+}
+
+#qr-result img{
+    width:220px;
+    background:#fff;
+    padding:12px;
+    border-radius:16px;
+    box-shadow:0 0 30px rgba(0,212,255,.25);
+}
+
+/* ========================= */
+/* Responsive Design */
+/* ========================= */
+
+@media(max-width:900px){
+
+nav{
+
+flex-direction:column;
+gap:20px;
+
+}
+
+nav ul{
+
+flex-wrap:wrap;
+justify-content:center;
+
+}
+
+.hero{
+
+flex-direction:column;
+text-align:center;
+padding-top:170px;
+
+}
+
+.hero-left{
+
+width:100%;
+
+}
+
+.hero-right{
+
+width:100%;
+margin-top:60px;
+
+}
+
+.hero-left h1{
+
+font-size:42px;
+
+}
+
+.hero-left p{
+
+font-size:16px;
+
+}
+
+.buttons{
+
+justify-content:center;
+flex-wrap:wrap;
+
+}
+
+.glass-card{
+
+width:100%;
+max-width:340px;
+
+}
+
+}
+/* ========================= */
+/* Features Section */
+/* ========================= */
+
+.features{
+
+    padding:100px 8%;
+    background:#0d1224;
+    text-align:center;
+
+}
+
+.features h2{
+
+    font-size:42px;
+    margin-bottom:60px;
+    color:#fff;
+
+}
+
+.feature-grid{
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+
+}
+
+.feature-card{
+
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    backdrop-filter:blur(15px);
+    padding:30px;
+    border-radius:20px;
+    transition:.4s;
+
+    opacity:0;
+    transform:translateY(50px);
+    animation:fadeUp 1s forwards;
+
+}
+
+.feature-card:nth-child(2){
+
+    animation-delay:.3s;
+
+}
+
+.feature-card:nth-child(3){
+
+    animation-delay:.6s;
+
+}
+
+.feature-card:hover{
+
+    transform:translateY(-10px);
+    box-shadow:0 0 40px rgba(0,212,255,.35);
+
+}
+
+.feature-card h3{
+
+    color:#00d4ff;
+    margin-bottom:15px;
+
+}
+
+.feature-card p{
+
+    color:#bcbcbc;
+    line-height:1.8;
+
+}
+
+@keyframes fadeUp{
+
+0%{
+
+opacity:0;
+transform:translateY(50px);
+
+}
+
+100%{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
 }

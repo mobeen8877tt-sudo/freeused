@@ -1,101 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Free QR Code Generator | AI Style</title>
+    <title>Free QR Code Generator | AI Style</title>
 
-<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
 </head>
 
 <body>
 
-<nav>
+    <nav>
 
-<div class="logo">
-QR<span>AI</span>
-</div>
+        <div class="logo">
+            QR<span>AI</span>
+        </div>
 
-<ul>
+        <ul>
 
-<li><a href="#">Home</a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#generator">Generator</a></li>
+            <li><a href="#">Categories</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#">Contact</a></li>
 
-<li><a href="#">Generator</a></li>
+        </ul>
 
-<li><a href="#">Categories</a></li>
+    </nav>
 
-<li><a href="#">Features</a></li>
+    <!-- Hero Section -->
 
-<li><a href="#">Contact</a></li>
+    <section class="hero">
 
-</ul>
+        <div class="hero-left">
 
-</nav>
+            <h1>Create Beautiful QR Codes Instantly</h1>
 
-<section class="hero">
+            <p>
+                Generate unlimited QR Codes for Websites, WiFi,
+                Email, WhatsApp, Phone Numbers and much more.
+            </p>
 
-<div class="hero-left">
+            <div class="buttons">
 
-<h1>Create Beautiful QR Codes Instantly</h1>
+                <button class="btn1">
+                    Generate QR
+                </button>
 
-<p>
+                <button class="btn2">
+                    Learn More
+                </button>
 
-Generate unlimited QR Codes for Websites, WiFi,
-Email, WhatsApp, Phone Numbers and much more.
+            </div>
 
-</p>
+        </div>
 
-<div class="buttons">
+        <div class="hero-right">
 
-<button class="btn1">
+            <div class="glass-card" id="generator">
 
-Generate QR
+                <h2>Generate QR</h2>
 
-</button>
+                <input
+                    type="text"
+                    id="qr-input"
+                    placeholder="Paste your website link here..."
+                >
 
-<button class="btn2">
+                <button id="generate-btn">
+                    Generate QR Code
+                </button>
 
-Learn More
+                <div id="qr-result"></div>
 
-</button>
+            </div>
 
-</div>
+        </div>
 
-</div>
+    </section>
 
-<div class="hero-right">
+    <!-- Features Section -->
 
-<div class="glass-card">
+    <section class="features" id="features">
 
-<h2>Generate QR</h2>
+        <h2>Why Choose Our QR Generator?</h2>
 
-<input
-type="text"
-id="qr-input"
-placeholder="Paste your website link here..."
->
+        <div class="feature-grid">
 
-<button id="generate-btn">
-Generate QR Code
-</button>
+            <div class="feature-card">
+                <h3>⚡ Fast Generation</h3>
+                <p>Create QR Codes instantly with one click.</p>
+            </div>
 
-<div id="qr-result"></div>
+            <div class="feature-card">
+                <h3>🔒 Secure</h3>
+                <p>Your data is never stored on our servers.</p>
+            </div>
 
-</div>
+            <div class="feature-card">
+                <h3>🎨 Beautiful Design</h3>
+                <p>Modern UI with smooth animations.</p>
+            </div>
 
-</div>
+        </div>
 
-</section>
+    </section>
 
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
 
