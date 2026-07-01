@@ -1,39 +1,181 @@
-body{
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
     margin:0;
-    font-family:Arial, Helvetica, sans-serif;
-    background:#0b1020;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#070b18;
     color:white;
+    overflow-x:hidden;
+}
+
+/* Navbar */
+
+nav{
+    width:100%;
     display:flex;
-    justify-content:center;
+    justify-content:space-between;
     align-items:center;
-    height:100vh;
-    flex-direction:column;
-    text-align:center;
+    padding:25px 8%;
+    position:fixed;
+    top:0;
+    left:0;
+    backdrop-filter:blur(18px);
+    background:rgba(255,255,255,.05);
+    border-bottom:1px solid rgba(255,255,255,.08);
+    z-index:999;
 }
 
-h1{
-    font-size:50px;
-    color:#64ffda;
+.logo{
+    font-size:32px;
+    font-weight:800;
 }
 
-p{
-    font-size:20px;
-    color:#cccccc;
-    max-width:700px;
+.logo span{
+    color:#00d4ff;
 }
 
-button{
-    padding:15px 35px;
-    border:none;
-    border-radius:50px;
-    background:#00bfff;
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:35px;
+}
+
+nav ul li a{
     color:white;
-    font-size:18px;
-    cursor:pointer;
+    text-decoration:none;
     transition:.3s;
 }
 
-button:hover{
-    transform:scale(1.08);
-    background:#00e5ff;
+nav ul li a:hover{
+    color:#00d4ff;
+}
+
+/* Hero */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:120px 8%;
+}
+
+.hero-left{
+    width:55%;
+}
+
+.hero-left h1{
+    font-size:60px;
+    line-height:1.2;
+    margin-bottom:25px;
+}
+
+.hero-left p{
+    color:#bcbcbc;
+    font-size:18px;
+    line-height:1.8;
+    margin-bottom:40px;
+}
+
+/* Buttons */
+
+.buttons{
+    display:flex;
+    gap:20px;
+}
+
+.btn1,
+.btn2{
+
+    padding:15px 35px;
+    border:none;
+    border-radius:50px;
+    cursor:pointer;
+    font-size:16px;
+    transition:.35s;
+
+}
+
+.btn1{
+
+    background:#00d4ff;
+    color:white;
+
+}
+
+.btn2{
+
+    background:transparent;
+    border:1px solid #00d4ff;
+    color:#00d4ff;
+
+}
+
+.btn1:hover{
+
+    transform:translateY(-4px);
+
+}
+
+.btn2:hover{
+
+    background:#00d4ff;
+    color:white;
+
+}
+
+/* Glass Card */
+
+.hero-right{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:40%;
+
+}
+
+.glass-card{
+
+    width:320px;
+    height:320px;
+
+    background:rgba(255,255,255,.06);
+
+    border:1px solid rgba(255,255,255,.1);
+
+    backdrop-filter:blur(20px);
+
+    border-radius:30px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    box-shadow:0 0 50px rgba(0,212,255,.15);
+
+}
+
+.glass-card h2{
+
+    font-size:35px;
+
+    margin-bottom:15px;
+
+}
+
+.glass-card p{
+
+    color:#bcbcbc;
+
 }
