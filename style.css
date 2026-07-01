@@ -179,3 +179,250 @@ nav ul li a:hover{
     color:#bcbcbc;
 
 }
+/* ============================= */
+/* AI Animated Background */
+/* ============================= */
+
+body::before{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    background:#00d4ff;
+    border-radius:50%;
+    filter:blur(180px);
+    opacity:.18;
+    top:-150px;
+    left:-150px;
+    animation:moveOne 12s infinite alternate ease-in-out;
+    z-index:-2;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    width:450px;
+    height:450px;
+    background:#8b5cf6;
+    border-radius:50%;
+    filter:blur(180px);
+    opacity:.18;
+    bottom:-150px;
+    right:-150px;
+    animation:moveTwo 14s infinite alternate ease-in-out;
+    z-index:-2;
+}
+
+@keyframes moveOne{
+
+0%{
+transform:translate(0,0);
+}
+
+100%{
+transform:translate(150px,120px);
+}
+
+}
+
+@keyframes moveTwo{
+
+0%{
+transform:translate(0,0);
+}
+
+100%{
+transform:translate(-150px,-120px);
+}
+
+}
+/* Floating Glass Card */
+.glass-card{
+    animation: floatCard 4s ease-in-out infinite;
+    transition: .4s;
+}
+
+.glass-card:hover{
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 0 0 60px rgba(0,212,255,.35);
+}
+
+@keyframes floatCard{
+
+0%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-15px);
+}
+
+100%{
+transform:translateY(0px);
+}
+
+}
+/* Gradient Heading */
+
+.hero-left h1{
+
+background:linear-gradient(90deg,#ffffff,#00d4ff,#8b5cf6);
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+background-size:300%;
+
+animation:gradientMove 6s linear infinite;
+
+}
+
+@keyframes gradientMove{
+
+0%{
+background-position:0%;
+}
+
+100%{
+background-position:300%;
+}
+
+}
+/* Smooth Page Fade */
+
+body{
+
+animation:pageFade 1.2s ease;
+
+}
+
+@keyframes pageFade{
+
+from{
+
+opacity:0;
+
+transform:translateY(20px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+/* ========================= */
+/* Responsive Design */
+/* ========================= */
+
+@media(max-width:900px){
+
+nav{
+
+flex-direction:column;
+
+gap:20px;
+
+}
+
+nav ul{
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+}
+
+.hero{
+
+flex-direction:column;
+
+text-align:center;
+
+padding-top:170px;
+
+}
+
+.hero-left{
+
+width:100%;
+
+}
+
+.hero-right{
+
+width:100%;
+
+margin-top:60px;
+
+}
+
+.hero-left h1{
+
+font-size:42px;
+
+}
+
+}
+/* ========================= */
+/* Premium Button Effect */
+/* ========================= */
+
+.btn1,
+.btn2{
+    position:relative;
+    overflow:hidden;
+}
+
+.btn1::before,
+.btn2::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-120%;
+    width:100%;
+    height:100%;
+    background:rgba(255,255,255,.25);
+    transform:skewX(-25deg);
+    transition:.7s;
+}
+
+.btn1:hover::before,
+.btn2:hover::before{
+    left:130%;
+}
+/* ========================= */
+/* Smooth Section Animation */
+/* ========================= */
+
+.hero-left,
+.hero-right{
+
+animation:heroUp 1.4s ease;
+
+}
+
+@keyframes heroUp{
+
+0%{
+
+opacity:0;
+
+transform:translateY(60px);
+
+}
+
+100%{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
