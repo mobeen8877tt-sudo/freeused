@@ -20,6 +20,8 @@
 
 <body>
 
+    <!-- Navbar -->
+
     <nav>
 
         <div class="logo">
@@ -30,7 +32,7 @@
 
             <li><a href="#">Home</a></li>
             <li><a href="#generator">Generator</a></li>
-            <li><a href="#">Categories</a></li>
+            <li><a href="#categories">Categories</a></li>
             <li><a href="#features">Features</a></li>
             <li><a href="#">Contact</a></li>
 
@@ -110,6 +112,48 @@
             <div class="feature-card">
                 <h3>🎨 Beautiful Design</h3>
                 <p>Modern UI with smooth animations.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Categories Section -->
+
+    <section class="categories" id="categories">
+
+        <h2>QR Categories</h2>
+
+        <div class="category-grid">
+
+            <div class="category-card" onclick="selectType('website')">
+                <h3>🌐 Website QR</h3>
+                <p>Generate QR Codes for any website URL.</p>
+            </div>
+
+            <div class="category-card" onclick="selectType('wifi')">
+                <h3>📶 WiFi QR</h3>
+                <p>Share WiFi instantly without typing passwords.</p>
+            </div>
+
+            <div class="category-card" onclick="selectType('email')">
+                <h3>📧 Email QR</h3>
+                <p>Create QR Codes that open email directly.</p>
+            </div>
+
+            <div class="category-card" onclick="selectType('whatsapp')">
+                <h3>💬 WhatsApp QR</h3>
+                <p>Start WhatsApp chats with one scan.</p>
+            </div>
+
+            <div class="category-card" onclick="selectType('phone')">
+                <h3>📞 Phone QR</h3>
+                <p>Instantly call a number after scanning.</p>
+            </div>
+
+            <div class="category-card" onclick="selectType('location')">
+                <h3>📍 Location QR</h3>
+                <p>Share your Google Maps location quickly.</p>
             </div>
 
         </div>
