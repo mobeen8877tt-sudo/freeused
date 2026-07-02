@@ -7,10 +7,12 @@ const result = document.getElementById("qr-result");
 const downloadBtn = document.getElementById("download-btn");
 const qrColor = document.getElementById("qr-color");
 const qrSize = document.getElementById("qr-size");
+
 // Button Click Event
 button.addEventListener("click", () => {
 
     let value = input.value.trim();
+
 
     if(value === ""){
         alert("Please enter required information.");
@@ -42,6 +44,7 @@ button.addEventListener("click", () => {
     else if(currentType === "wifi"){
         qrData = "WIFI:T:WPA;S:" + value + ";;";
     }
+
 
     result.innerHTML = `
         <img
@@ -87,7 +90,7 @@ function selectType(type){
         input.placeholder = "Paste Google Maps link...";
     }
 
-    // 👇 YEH LINE YAHAN HONI CHAHIYE
+
     document.getElementById("generator").scrollIntoView({
         behavior: "smooth"
     });
