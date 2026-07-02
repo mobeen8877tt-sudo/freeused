@@ -1,9 +1,12 @@
 console.log("Free QR Code Generator Loaded Successfully!");
-// Get Elements
 
+// Get Elements
 const input = document.getElementById("qr-input");
 const button = document.getElementById("generate-btn");
 const result = document.getElementById("qr-result");
+const downloadBtn = document.getElementById("download-btn");
+const qrColor = document.getElementById("qr-color");
+const qrSize = document.getElementById("qr-size");
 // Button Click Event
 button.addEventListener("click", () => {
 
@@ -42,9 +45,10 @@ button.addEventListener("click", () => {
 
     result.innerHTML = `
         <img
-        src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${encodeURIComponent(qrData)}"
+        src="https://api.qrserver.com/v1/create-qr-code/?size=${qrSize.value}x${qrSize.value}&color=${qrColor.value.substring(1)}&data=${encodeURIComponent(qrData)}"
         alt="QR Code">
     `;
+    downloadBtn.style.display = "block";
 
 });
 // =========================
@@ -89,3 +93,15 @@ function selectType(type){
     });
 
 }
+downloadBtn.addEventListener("click", () => {
+
+    const img = document.querySelector("#qr-result img");
+
+    if (!img) return;
+
+    const a = document.createElement("a");
+    a.href = img.src;
+    a.download = "qr-code.png";
+    a.click();
+
+});

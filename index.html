@@ -78,13 +78,32 @@
                     id="qr-input"
                     placeholder="Paste your website link here..."
                 >
+<label for="qr-color">QR Color</label>
 
+<input
+    type="color"
+    id="qr-color"
+    value="#000000">
+    
+    <label for="qr-size">QR Size</label>
+
+<select id="qr-size">
+
+    <option value="200">200 × 200</option>
+
+    <option value="300" selected>300 × 300</option>
+
+    <option value="500">500 × 500</option>
+
+</select>
                 <button id="generate-btn">
                     Generate QR Code
                 </button>
 
                 <div id="qr-result"></div>
-
+<button id="download-btn" style="display:none;">
+    Download QR
+</button>
             </div>
 
         </div>
