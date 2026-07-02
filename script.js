@@ -11,6 +11,9 @@ const qrSize = document.getElementById("qr-size");
 // Button Click Event
 button.addEventListener("click", () => {
 
+    button.innerText = "Generating...";
+button.disabled = true;
+
     let value = input.value.trim();
 
 
@@ -46,12 +49,20 @@ button.addEventListener("click", () => {
     }
 
 
+setTimeout(() => {
+
     result.innerHTML = `
         <img
         src="https://api.qrserver.com/v1/create-qr-code/?size=${qrSize.value}x${qrSize.value}&color=${qrColor.value.substring(1)}&data=${encodeURIComponent(qrData)}"
         alt="QR Code">
     `;
+
     downloadBtn.style.display = "block";
+
+    button.innerText = "Generate QR Code";
+    button.disabled = false;
+
+}, 1000);
 
 });
 // =========================
