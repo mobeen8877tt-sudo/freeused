@@ -5,6 +5,8 @@ const input = document.getElementById("qr-input");
 const button = document.getElementById("generate-btn");
 const result = document.getElementById("qr-result");
 const downloadBtn = document.getElementById("download-btn");
+const copyBtn = document.getElementById("copy-btn");
+const clearHistoryBtn = document.getElementById("clear-history-btn");
 const qrColor = document.getElementById("qr-color");
 const qrSize = document.getElementById("qr-size");
 const bgColor = document.getElementById("bg-color");
@@ -58,6 +60,7 @@ setTimeout(() => {
     `;
 
     downloadBtn.style.display = "block";
+    copyBtn.style.display = "block";
 
     history.unshift(value);
 
@@ -138,6 +141,14 @@ downloadBtn.addEventListener("click", () => {
 
 });
 
+copyBtn.addEventListener("click", () => {
+
+    navigator.clipboard.writeText(input.value);
+
+    alert("✅ QR Data Copied!");
+
+});
+
 // =========================
 // Dark / Light Mode
 // =========================
@@ -185,3 +196,12 @@ function renderHistory() {
     });
 
 }
+clearHistoryBtn.addEventListener("click", () => {
+
+    history = [];
+
+    localStorage.removeItem("qrHistory");
+
+    renderHistory();
+
+});

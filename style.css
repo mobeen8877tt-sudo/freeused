@@ -841,3 +841,19 @@ body.light-mode a{
 #history-list li:hover{
     background: #3b82f6;
 }
+#clear-history-btn{
+    width: 100%;
+    margin: 10px 0;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: #ef4444;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+}
+
+#clear-history-btn:hover{
+    background: #dc2626;
+}

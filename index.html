@@ -106,7 +106,16 @@
 
     <option value="500">500 × 500</option>
 
+
 </select>
+
+<label for="logo-input">QR Logo (Optional)</label>
+
+<input
+    type="file"
+    id="logo-input"
+    accept="image/*">
+
                 <button id="generate-btn">
                     Generate QR Code
                 </button>
@@ -115,11 +124,20 @@
 
                 <h3>Recent QR History</h3>
 
+                <button id="clear-history-btn">
+    Clear History
+</button>
+
 <ul id="history-list"></ul>
 
 <button id="download-btn" style="display:none;">
     Download QR
 </button>
+
+<button id="copy-btn" style="display:none;">
+    📋 Copy QR Data
+</button>
+
             </div>
 
         </div>
