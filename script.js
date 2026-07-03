@@ -59,6 +59,32 @@ setTimeout(() => {
 
     downloadBtn.style.display = "block";
 
+    history.unshift(value);
+
+    console.log(history);
+
+if(history.length > 5){
+    history.pop();
+}
+
+const historyList = document.getElementById("history-list");
+
+historyList.innerHTML = "";
+
+history.forEach(item => {
+
+   const li = document.createElement("li");
+
+li.textContent = item;
+
+li.title = item; // Mouse hover par poora URL dikhega
+
+li.onclick = () => fillInput(item);
+
+historyList.appendChild(li);
+
+});
+
     button.innerText = "Generate QR Code";
     button.disabled = false;
 
@@ -68,6 +94,8 @@ setTimeout(() => {
 // =========================
 // QR Category Selector
 // =========================
+
+let history = [];
 
 let currentType = "website";
 
@@ -119,3 +147,32 @@ downloadBtn.addEventListener("click", () => {
     a.click();
 
 });
+
+// =========================
+// Dark / Light Mode
+// =========================
+
+const themeBtn = document.getElementById("theme-btn");
+
+themeBtn.addEventListener("click", () => {
+
+    document.body.classList.toggle("light-mode");
+
+    if(document.body.classList.contains("light-mode")){
+        themeBtn.innerText = "🌞 Light Mode";
+    }
+
+    else{
+        themeBtn.innerText = "🌙 Dark Mode";
+    }
+
+});
+function fillInput(value){
+
+    input.value = value;
+
+    document.getElementById("generator").scrollIntoView({
+        behavior: "smooth"
+    });
+
+}

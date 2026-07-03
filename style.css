@@ -321,9 +321,11 @@ left:130%;
 
 .glass-card{
 
-width:320px;
+width:380px;
 min-height:320px;
 padding:30px;
+
+overflow: hidden;
 
 background:rgba(255,255,255,.06);
 
@@ -732,4 +734,110 @@ label{
     background:#1f2235;
     color:white;
 
+}
+#theme-btn{
+
+    padding:10px 20px;
+    background:#6c63ff;
+    color:#fff;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:600;
+    transition:0.3s;
+
+}
+
+#theme-btn:hover{
+
+    background:#5848e5;
+
+}
+
+/* =========================
+   Light Mode
+========================= */
+
+body.light-mode{
+
+    background:#f5f7fb;
+    color:#111;
+
+}
+
+body.light-mode nav{
+
+    background:#ffffff;
+
+}
+
+body.light-mode .hero{
+
+    background:#f5f7fb;
+
+}
+
+body.light-mode .glass-card{
+
+    background:#ffffff;
+    color:#111;
+    border:1px solid #ddd;
+
+}
+
+body.light-mode .features{
+
+    background:#eef2f7;
+
+}
+
+body.light-mode .categories{
+
+    background:#eef2f7;
+
+}
+
+body.light-mode h1,
+body.light-mode h2,
+body.light-mode h3,
+body.light-mode p,
+body.light-mode a{
+
+    color:#111;
+
+}
+#history-list{
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+    max-height: 150px;
+
+    width: 100%;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    box-sizing: border-box;
+}
+
+#history-list li{
+    display: block;
+    width: 100%;
+
+    background: rgba(255,255,255,.08);
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    box-sizing: border-box;
+}
+
+#history-list li:hover{
+    background: #3b82f6;
 }
