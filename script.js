@@ -7,7 +7,7 @@ const result = document.getElementById("qr-result");
 const downloadBtn = document.getElementById("download-btn");
 const qrColor = document.getElementById("qr-color");
 const qrSize = document.getElementById("qr-size");
-
+const bgColor = document.getElementById("bg-color");
 // Button Click Event
 button.addEventListener("click", () => {
 
@@ -53,7 +53,7 @@ setTimeout(() => {
 
     result.innerHTML = `
         <img
-        src="https://api.qrserver.com/v1/create-qr-code/?size=${qrSize.value}x${qrSize.value}&color=${qrColor.value.substring(1)}&data=${encodeURIComponent(qrData)}"
+        src="https://api.qrserver.com/v1/create-qr-code/?size=${qrSize.value}x${qrSize.value}&color=${qrColor.value.substring(1)}&bgcolor=${bgColor.value.substring(1)}&data=${encodeURIComponent(qrData)}"
         alt="QR Code">
     `;
 
@@ -65,25 +65,13 @@ setTimeout(() => {
 
 if(history.length > 5){
     history.pop();
+
+    
 }
 
-const historyList = document.getElementById("history-list");
+localStorage.setItem("qrHistory", JSON.stringify(history));
 
-historyList.innerHTML = "";
-
-history.forEach(item => {
-
-   const li = document.createElement("li");
-
-li.textContent = item;
-
-li.title = item; // Mouse hover par poora URL dikhega
-
-li.onclick = () => fillInput(item);
-
-historyList.appendChild(li);
-
-});
+renderHistory();
 
     button.innerText = "Generate QR Code";
     button.disabled = false;
@@ -95,9 +83,11 @@ historyList.appendChild(li);
 // QR Category Selector
 // =========================
 
-let history = [];
+let history = JSON.parse(localStorage.getItem("qrHistory")) || [];
 
 let currentType = "website";
+
+renderHistory();
 
 function selectType(type){
 
@@ -173,6 +163,25 @@ function fillInput(value){
 
     document.getElementById("generator").scrollIntoView({
         behavior: "smooth"
+    });
+
+}
+function renderHistory() {
+
+    const historyList = document.getElementById("history-list");
+
+    historyList.innerHTML = "";
+
+    history.forEach(item => {
+
+        const li = document.createElement("li");
+
+        li.textContent = item;
+
+        li.onclick = () => fillInput(item);
+
+        historyList.appendChild(li);
+
     });
 
 }
