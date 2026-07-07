@@ -212,15 +212,3 @@ clearHistoryBtn.addEventListener("click", () => {
 
 });
 
-/* ========================= */
-/* Loading Spinner */
-/* ========================= */
-
-.loading{
-    display: none;
-    text-align: center;
-    color: #00d4ff;
-    font-size: 18px;
-    font-weight: bold;
-    margin: 20px 0;
-}
