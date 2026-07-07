@@ -4,6 +4,7 @@ console.log("Free QR Code Generator Loaded Successfully!");
 const input = document.getElementById("qr-input");
 const button = document.getElementById("generate-btn");
 const result = document.getElementById("qr-result");
+const loading = document.getElementById("loading");
 const downloadBtn = document.getElementById("download-btn");
 const copyBtn = document.getElementById("copy-btn");
 const clearHistoryBtn = document.getElementById("clear-history-btn");
@@ -15,6 +16,10 @@ button.addEventListener("click", () => {
 
     button.innerText = "Generating...";
 button.disabled = true;
+
+loading.style.display = "block";
+result.innerHTML = "";
+downloadBtn.style.display = "none";
 
     let value = input.value.trim();
 
@@ -60,6 +65,7 @@ setTimeout(() => {
     `;
 
     downloadBtn.style.display = "block";
+    loading.style.display = "none";
     copyBtn.style.display = "block";
 
     history.unshift(value);
@@ -205,3 +211,16 @@ clearHistoryBtn.addEventListener("click", () => {
     renderHistory();
 
 });
+
+/* ========================= */
+/* Loading Spinner */
+/* ========================= */
+
+.loading{
+    display: none;
+    text-align: center;
+    color: #00d4ff;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 20px 0;
+}
